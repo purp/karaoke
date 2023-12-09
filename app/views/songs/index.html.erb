@@ -1,0 +1,95 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Queue A New Song</h1>
+
+<%= render 'form', song: @song, index_page: true %>
+
+<br>
+<br>
+
+<h1>Upcoming Performers</h1>
+<table>
+  <thead>
+    <tr>
+      <td></td>
+      <td>performer</td>
+      <td>skipped</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% if @upcoming[ 0 ]%> 
+      <%= form_for( @upcoming[ 0 ] ) do |uf| %>
+        <tr>
+          <td><%= link_to "Start Song", @upcoming[ 0 ].url, class: "finish-song", id: @upcoming[ 0 ].id, target: "_blank" %>
+          <td><%= link_to @upcoming[ 0 ].performer, @upcoming[ 0 ] %></td>
+          <td><%= uf.check_box :skipped %></td>
+          <td><%= uf.submit 'Save Skip' %></td>
+          <td><%= link_to 'Edit', edit_song_path( @upcoming[ 0 ] ) %></td>
+          <td><%= link_to 'Destroy', @upcoming[ 0 ], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    <% end %>
+    <% if @upcoming[1..]%>
+      <% @upcoming[1..].each do |song| %>
+        <%= form_for( song ) do |upf| %>
+          <tr>
+            <td></td>
+            <td><%= link_to song.performer, song %></td>
+            <td><%= upf.check_box :skipped %></td>
+            <td><%= upf.submit 'Save Skip' %></td>
+            <td><%= link_to 'Edit', edit_song_path(song) %></td>
+            <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    <% end %>
+    <% @skipped.each do |song| %>
+      <%= form_for( song ) do |s| %>
+        <tr>
+          <td></td>
+          <td><%= link_to song.performer, song %></td>
+          <td><%= s.check_box :skipped %></td>
+          <td><%= s.submit 'Save Skip' %></td>
+          <td><%= link_to 'Edit', edit_song_path(song) %></td>
+          <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h1>Finished Performers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <td></td>
+      <td>performer</td>
+      <td>finished</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @finished.each do |song| %>
+      <%= form_for( song ) do |s| %>
+        <tr>
+          <td></td>
+          <td><%= link_to song.performer, song %></td>
+          <td><%= s.check_box :finished %></td>
+          <td><%= s.submit 'Save Finish' %></td>
+          <td><%= link_to 'Edit', edit_song_path(song) %></td>
+          <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
