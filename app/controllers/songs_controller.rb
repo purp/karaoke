@@ -1,5 +1,5 @@
 class SongsController < ApplicationController
-  before_action :set_song, only: %i[ destroy edit show update ]
+  before_action :set_song, only: %i[ destroy edit finish_song show update ]
 
   # POST /songs or /songs.json
   def create
@@ -26,6 +26,15 @@ class SongsController < ApplicationController
 
   # GET /songs/1/edit
   def edit
+  end
+
+  # method to click a button and finish a song
+  def finish_song 
+    if @song.update( finished: true ) 
+      redirect_to songs_url, notice: "#{ @song.performer } just finished a song." 
+    else 
+      redirect_to songs_url, error: "#{ @song.performer }'s song was not finished."
+    end
   end
 
   # GET /songs
