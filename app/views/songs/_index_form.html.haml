@@ -1,0 +1,12 @@
+= form_for( song ) do |s|
+  %tr
+    - if upcoming
+      %td
+        = link_to "Start Song", @upcoming[ 0 ].url, onClick: "finishSong()", class: "finish-song", id: @upcoming[ 0 ].id, target: "_blank"
+        - else
+          %td
+      %td= link_to song.performer, song
+      %td= s.check_box :skipped
+      %td= s.submit 'Save Skip'
+      %td= link_to 'Edit', edit_song_path(song)
+      %td= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' }

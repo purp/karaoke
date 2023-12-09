@@ -1,0 +1,38 @@
+%p#notice= notice
+%h1 Queue A New Song
+= render 'form', song: @song, index_page: true
+%br/
+%br/
+%h1 Upcoming Performers
+%table
+  = render 'table_headers'
+  %tbody
+    - if @upcoming[ 0 ]
+      = render 'index_form', song: @upcoming[ 0 ], upcoming: true
+    - if @upcoming[ 1.. ]
+      - @upcoming[ 1.. ].each do | song |
+        = render 'index_form', song: song, upcoming: false
+    - @skipped.each do | song |
+      = render 'index_form', song: song, upcoming: false
+%br/
+%h1 Finished Performers
+%table
+  = render 'table_headers'
+  %tbody
+    - @finished.each do |song|
+      = render 'index_form', song: song, upcoming: false
+%br/
+= javascript_tag do
+  let songId = document.getElementsByClassName("finish-song")[0].id
+  function finishSong() {
+  fetch(`/finish_song?id=${songId}`, {
+  method: 'get',
+  headers: {
+  'Accept': 'application/json',
+  'Content-Type': 'application/json'
+  }
+  })
+  \.then(response =&gt; response.json())
+  \.then(response =&gt; console.log(JSON.stringify(response)))
+  \.then(response =&gt; location.reload());
+  };
