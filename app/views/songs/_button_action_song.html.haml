@@ -1,0 +1,4 @@
+= button_to song.url, onClick: "takeActionOnSong(#{action},#{song.id})", class: "song-action btn-discreet", id: "#{action}-#{song.id}", target: "_blank" do
+  %span 
+    = render "components/icons/play"
+  %span Start
