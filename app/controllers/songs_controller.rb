@@ -1,5 +1,5 @@
 class SongsController < ApplicationController
-  #skip_before_action :verify_authenticity_token, only: %i[ finish_song skip_song ]
+  protect_from_forgery with: :exception
   before_action :set_song, only: %i[ destroy edit finish_song show skip_song update ]
 
   # POST /songs or /songs.json

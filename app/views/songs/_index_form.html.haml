@@ -6,19 +6,18 @@
         = render "button_action_song", action: "finish", song: @upcoming[ 0 ]
     - else
       %td
-    %td= button_to ( song.skipped ? "Resume" : "Skip" ), skip_song_path(song), onClick: "takeActionOnSong('skip',#{song.id})", class: "skip-song btn-discreet", id: "skip-#{song.id}"
-    %td
-      = link_to edit_song_path(song), class: "song-action btn-discreet" do
-        %span
-          = render "components/icons/edit"
-        %span Edit
-    %td
-      = link_to song, method: :delete, data: { confirm: 'Are you sure?' }, class: "song-action btn-discreet" do
-        %span 
-          = render "components/icons/destroy"
-        %span Destroy
+    - [ "skip", "edit", "destroy" ].each do | action | 
+      %td 
+        = render "button_action_song", action: action, song: song
+
+
+
+
 :javascript 
-  function takeActionOnSong( action, id ) {
+  function takeActionOnSong( element ) {
+    let data = element.dataset;
+    let action = data.action;
+    let id = data.id;
     fetch(`/${action}_song?id=${id}`, {
       method: 'get',
       headers: {
