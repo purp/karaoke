@@ -69,20 +69,21 @@ label {
   gap: 0.5rem;
   font-size: 1rem;
   max-width: 500px;
-  input[ type = text ] {
+}
+
+input[ type = text ], input[ type = email ], input[ type = password ] {
+  background-color: $beige;
+  border: 1px solid $beige;
+  border-radius: 5px;
+  color: $magenta;
+  flex-grow: 1;
+  font-size: 1rem;
+  padding: 0.25rem;
+  &:hover, &:focus, &:focus-visible {
     background-color: $beige;
-    border: 1px solid $beige;
-    border-radius: 5px;
-    color: $magenta;
-    flex-grow: 1;
-    font-size: 1rem;
-    padding: 0.25rem;
-    &:hover, &:focus, &:focus-visible {
-      background-color: $beige;
-      border: 1px solid $magenta;
-      box-shadow: 2px 2px 4px $magenta-light;
-      cursor: text;
-      outline: none;
-    }
+    border: 1px solid $magenta;
+    box-shadow: 2px 2px 4px $magenta-light;
+    cursor: text;
+    outline: none;
   }
 }

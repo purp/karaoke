@@ -1,3 +1,7 @@
-%h2 Hello World
-%p
-  The time is now: #{Time.now}
+%h2 523 KARAOKE BOOTS
+%div{ style: "margin-top: 1rem; "}
+- if user_signed_in?
+  = link_to "Go To Songs", songs_path
+  = button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn discreet", style: "margin-top: 1rem;"
+- else
+  = button_to "Sign in", new_user_session_path, class: "btn discreet"

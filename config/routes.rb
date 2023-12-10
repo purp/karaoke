@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'welcome#index'
   resources :songs
   get '/finish_song', to: 'songs#finish_song', as: 'finish_song'
