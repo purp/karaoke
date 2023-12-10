@@ -8,21 +8,21 @@
         - song.errors.full_messages.each do |message|
           %li= message
   = label_tag do
-    PERFORMER
+    Performer
     \#{form.text_field :performer}
   = label_tag do
-    CATEGORY
+    Category
     \#{form.text_field :category}
   = label_tag do
     URL
     \#{form.text_field :url}
   - unless index_page
     = label_tag do
-      SKIPPED
+      Skipped
       \#{form.check_box :skipped}
   - unless index_page
     = label_tag do
-      FINISHED
+      Finished
       \#{form.check_box :finished}
   .actions
     = form.submit

@@ -1,0 +1,12 @@
+body {
+  color: $midnight; 
+  font-family: sans-serif;
+  a {
+    color: $midnight; 
+    &:hover, &:focus {
+        color: $magenta; 
+        cursor: pointer;
+        outline: none;
+    }
+  }
+}

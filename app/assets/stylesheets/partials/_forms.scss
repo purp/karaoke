@@ -1,0 +1,65 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; 
+  .actions {
+    display: flex;
+    justify-content: end;
+    max-width: 500px;
+  }
+}
+.btn-discreet {
+  background-color: unset;
+  border: 1px solid $magenta;
+  border-radius: 5px;
+  font-size: 1rem;
+  padding: 0.25rem .75rem;
+  &:hover, &:focus, &:focus-visible {
+      background-color: $yellow;
+      border: 1px solid $midnight;
+      border-radius: 5px;
+      cursor: pointer;
+      color: $midnight; 
+      outline: none;
+  }
+}
+input[ type = submit ], .btn-inactive {
+  background-color: $yellow;
+  border: 1px solid $midnight;
+  border-radius: 5px;
+  color: $midnight; 
+  font-size: 1rem;
+  padding: 0.25rem .75rem;
+  &:hover, &:focus, &:focus-visible {
+      background-color: $magenta;
+      border: 1px solid $midnight;
+      border-radius: 5px;
+      cursor: pointer;
+      color: $midnight; 
+      outline: none;
+  }
+}
+label {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  font-size: 1rem;
+  max-width: 500px;
+  input {
+    background-color: $beige-light;
+    border: 1px solid $midnight;
+    border-radius: 5px;
+    flex-grow: 1;
+    font-size: 1rem;
+    padding: 0.25rem;
+  }
+}
+.song-action {
+  align-items: center;
+  display: flex;
+  gap: 0.25rem; 
+  span:first-of-type {
+    height: 1rem;
+    width: 1rem;
+  }
+}

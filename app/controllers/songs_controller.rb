@@ -1,5 +1,5 @@
 class SongsController < ApplicationController
-  before_action :set_song, only: %i[ destroy edit finish_song show update ]
+  before_action :set_song, only: %i[ destroy edit finish_song show skip_song update ]
 
   # POST /songs or /songs.json
   def create
@@ -47,6 +47,16 @@ class SongsController < ApplicationController
     @upcoming = Song.upcoming
   end
   
+  # method to click a button and skip a song
+  def skip_song 
+    skipped = !@song.skipped 
+    if @song.update( skipped: skipped ) 
+      redirect_to songs_url, notice: "#{ @song.performer } just skipped a song." 
+    else 
+      redirect_to songs_url, error: "#{ @song.performer }'s song was not skipped."
+    end
+  end
+
   # PATCH/PUT /songs/1 or /songs/1.json
   def update
     respond_to do |format|

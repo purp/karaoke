@@ -1,0 +1,16 @@
+
+@import 'partials/colors';
+body {
+  background-color: $beige;
+  margin: auto; 
+  max-width: 500px;
+  padding: 1rem;
+  table {
+    width: 100%; 
+    tr {
+      td:first-of-type {
+        width: 100%;
+      }
+    }
+  }
+}
