@@ -1,9 +1,9 @@
 - if action == "finish"
-  = link_to song.url, onclick: "takeActionOnSong(this)", class: "btn-discreet", data:{ action: action, id: song.id }, title: action, target: "_blank" do
+  = link_to song.url, onclick: "takeActionOnSong(this)", class: "btn discreet", data:{ action: action, id: song.id }, title: action, target: "_blank" do
     %span 
       = render "components/icons/play"
 - elsif action == "skip"
-  %button{onClick: "takeActionOnSong(this)", class: "btn-discreet", data:{ action: action, id: song.id }, title: song.skipped ? "resume" : "skip"}
+  %button{onClick: "takeActionOnSong(this)", class: "btn discreet", data:{ action: action, id: song.id }, title: song.skipped ? "resume" : "skip"}
     - if song.skipped 
       %span 
         = render "components/icons/add"
@@ -11,10 +11,10 @@
       %span 
         = render "components/icons/skip"
 - elsif action == "edit"
-  = link_to edit_song_path(song), class: "btn-discreet", title: action do
+  = link_to edit_song_path(song), class: "btn discreet", title: action do
     %span
       = render "components/icons/edit"
 - else 
-  = button_to song, method: :delete, data: { confirm: 'Are you sure?' }, class: "song-action btn-discreet", title: action do
+  = button_to song, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn discreet", title: action do
     %span 
       = render "components/icons/destroy"

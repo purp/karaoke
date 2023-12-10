@@ -1,7 +1,6 @@
-
 @import 'partials/colors';
 body {
-  background-color: $beige;
+  background-color: $midnight;
   margin: auto; 
   max-width: 500px;
   padding: 1rem;
@@ -12,5 +11,14 @@ body {
         width: 100%;
       }
     }
+  }
+  #notice:not(:empty) {
+    background-color: $beige;
+    border: 1px solid $beige;
+    border-radius: 5px;
+    color: $magenta;
+    flex-grow: 1;
+    font-size: 1rem;
+    padding: 0.25rem;
   }
 }

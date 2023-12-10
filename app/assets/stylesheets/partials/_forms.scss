@@ -8,10 +8,9 @@ form {
     max-width: 500px;
   }
 }
-.btn-discreet {
+
+input, .btn {
   align-items: center;
-  background-color: unset;
-  border: 1px solid $magenta;
   border-radius: 5px;
   display: flex;
   gap: 0.25rem; 
@@ -22,42 +21,68 @@ form {
     width: 1rem;
   }
   &:hover, &:focus, &:focus-visible {
-      background-color: $yellow;
-      border: 1px solid $midnight;
-      border-radius: 5px;
-      cursor: pointer;
-      color: $midnight; 
-      outline: none;
+    cursor: pointer;
+    outline: none;
   }
 }
-input[ type = submit ], .btn-inactive {
-  background-color: $yellow;
-  border: 1px solid $midnight;
-  border-radius: 5px;
-  color: $midnight; 
-  font-size: 1rem;
-  padding: 0.25rem .75rem;
+
+.discreet {
+  background-color: unset;
+  border: 1px solid $magenta;
+  color: $magenta; 
+  svg {
+    path {
+      fill: $magenta; 
+    }
+  }
   &:hover, &:focus, &:focus-visible {
-      background-color: $magenta;
-      border: 1px solid $midnight;
+    background-color: $magenta;
+    border: 1px solid $beige;
+    box-shadow: 2px 2px 4px $beige-light;
+    color: $beige; 
+    svg {
+      path {
+        fill: $beige; 
+      }
+    }
+  }
+}
+
+input[ type = submit ] {
+  background-color: $magenta;
+  border: 1px solid $magenta;
+  color: $beige; 
+  &:hover, &:focus, &:focus-visible {
+      background-color: $cyan;
+      border: 1px solid $cyan;
       border-radius: 5px;
+      box-shadow: 2px 2px 4px $cyan-light;
       cursor: pointer;
-      color: $midnight; 
+      color: $beige; 
       outline: none;
   }
 }
+
 label {
   align-items: center;
   display: flex;
   gap: 0.5rem;
   font-size: 1rem;
   max-width: 500px;
-  input {
-    background-color: $beige-light;
-    border: 1px solid $midnight;
+  input[ type = text ] {
+    background-color: $beige;
+    border: 1px solid $beige;
     border-radius: 5px;
+    color: $magenta;
     flex-grow: 1;
     font-size: 1rem;
     padding: 0.25rem;
+    &:hover, &:focus, &:focus-visible {
+      background-color: $beige;
+      border: 1px solid $magenta;
+      box-shadow: 2px 2px 4px $magenta-light;
+      cursor: text;
+      outline: none;
+    }
   }
 }

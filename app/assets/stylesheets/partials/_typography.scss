@@ -1,12 +1,14 @@
 body {
-  color: $midnight; 
+  color: $yellow; 
   font-family: sans-serif;
   a {
-    color: $midnight; 
+    color: $yellow; 
+    text-decoration: none;
     &:hover, &:focus {
         color: $magenta; 
         cursor: pointer;
         outline: none;
+        text-decoration: underline;
     }
   }
 }
