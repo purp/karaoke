@@ -1,8 +1,9 @@
-%h1 Queue A New Song
+%h1 KARAOKE 523 BOOTS
+%h2 Queue A New Song
 = render 'form', song: @song, index_page: true
 %br/
 %br/
-%h1 Upcoming Performers
+%h2 Upcoming Performers
 %table
   %tbody
     - if @upcoming[ 0 ]
@@ -13,7 +14,7 @@
     - @skipped.each do | song |
       = render 'index_form', song: song, upcoming: false
 %br/
-%h1 Finished Performers
+%h2 Finished Performers
 %table
   %tbody
     - @finished.each do |song|
