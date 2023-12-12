@@ -1,4 +1,4 @@
-# KARAOKE
+![an image of a magenta microphone over a midnight background](https://github.com/jaredharbison/karaoke/blob/main/karaoke-queue.png?raw=true)
 
 This karaoke web app can run on a laptop computer casting video to a screen via chromecast and audio to a karaoke speaker using bluetooth. Users can login with the karaoke host's login information to add songs to the queue from their mobile devices.
 
