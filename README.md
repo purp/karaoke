@@ -17,4 +17,4 @@ Identified in the gemfile, this app uses Ruby 3.2.2, Rails ~> 7.1.2, PG ~> 1.1 f
 
 ## License
 
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+This project is licensed under the MIT License - see the LICENSE.md file for details
