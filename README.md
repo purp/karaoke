@@ -1,6 +1,6 @@
 ## KARAOKE QUEUE
 
-This karaoke web app can run on a laptop computer casting video to a screen via chromecast and audio to a karaoke speaker using bluetooth. Users can login with the karaoke host's login information to add songs to the queue from their mobile devices.
+This karaoke web app can run on a laptop computer casting video to a screen via chromecast and audio to a karaoke speaker using bluetooth. Users can login from their mobile devices with the karaoke host's login information to add songs to the queue.
 
 ## Description
 
